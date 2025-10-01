@@ -1,0 +1,1085 @@
+<DOCTYPE! html>
+  
+    <html lang=es>
+    <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+  <title>La Cosecha Diaria</title>
+ 
+
+<link rel="stylesheet" href="style.css">
+      <link real="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+      <link real="stylesheet" href="style.css">
+     <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+     <link rel="icon" href="logo.ico">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".myswiper-1", {
+    loop: true, // se repite en bucle
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000, // cambia cada 3 segundos
+      disableOnInteraction: false,
+    },
+    effect: "slide", // puedes usar "fade", "cube", "coverflow", "flip"
+  });
+</script>
+
+</head>
+
+
+  
+<header>
+<!-- 🔐 MODAL DE LOGIN / REGISTRO -->
+
+  
+  <a href="index.html">
+    <img src="logo.jpeg" alt="Logo" width="100">
+  </a>
+<!-- Texto del logo -->
+  <div class="logo">
+    <h1>La Cosecha Diaria</h1>
+  </div>
+  <div class="buscador-container">
+  <input type="text" id="buscador" placeholder="Buscar fruta...">
+  <div>
+  <div id="login-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;z-index: 9999;">
+  <div style="background:#fff; padding:20px; border-radius:10px; max-width:400px; width:90%; z-index: 9999;">
+    <h2 id="modal-titulo">Iniciar Sesión</h2>
+    <form id="login-form">
+      <label>Usuario:</label>
+      <input type="text" id="username" required><br><br>
+      <label>Correo:</label>
+      <input type="email" id="email" required><br><br>
+      <label>Dirección:</label>
+      <input type="text" id="direccion"><br><br>
+      <label>Teléfono:</label>
+      <input type="tel" id="telefono"><br><br>
+      <button type="submit">Entrar</button>
+      <button type="button" onclick="cerrarLogin()">Cancelar</button>
+    </form>
+  </div>
+  </div>
+</div>
+  <!-- 🔑 BOTÓN DE LOGIN (arriba a la izquierda, antes del logo) -->
+<div id="login-container" style="position:relative; top:10px; left:500px;">
+  <button onclick="abrirLogin()">🔑 Iniciar Sesión</button>
+</div>
+ <div id="sugerencias" class="sugerencias"></div>
+  </div>
+ <button id="carrito-btn">🛒 Carrito (<span id="carrito-count">0</span>)</button>
+    </div>
+
+</div>
+</div>
+    
+</header>
+
+
+  <header class="opti">
+    <a href="index.html">Inicio</a>
+    <a href="#">Ofertas</a>
+    <div class="dropdown">
+    <button class="dropbtn">Catalogo ▼</button>
+    <div class="dropdown-content">
+      <a href="supmanzanas.html">manzanas</a>
+      <a href="supuvas.html">uvas</a>
+      <a href="supfrutas tropicales.html">frutas tropicales</a>
+      <a href="supperas.html">peras</a>
+      <a href="suplimones.html">limones</a>
+      <a href="supcitricos.html">citricos</a>
+      <a href="supfrutas de temporada.html">frutas de temporada</a>
+      <a href="supfresas y moras.html">fresas y moras</a>
+      <a href="supduraznos.html">duraznos</a>
+    </div>
+   
+    <a href="#">Contacto</a>
+  </header>
+
+<header class="anuncios-header">
+  <div class="anuncios-marquee">
+    <samp></samp>
+    <samp></samp>
+    <span>🍎 Manzanas frescas a solo $25 el kilo</span>
+    <span>🥑 Aguacates premium - ¡Llévate 2 y paga 1!</span>
+    <span>🚚 Envíos GRATIS en compras mayores a $500</span>
+    <span>🌽 Productos 100% orgánicos y frescos de la granja</span>
+  </div>
+</header>
+
+
+
+
+<header class="header-anuncios">
+  
+ 
+  <div class="anuncio nintendo"> 
+   <img src="AutoEnhancer_anuncio.jpg" width="700">
+  </div>
+</header>
+
+<div class="desktop"></div>
+  <div class="tablet"></div>
+  <div class="movil"></div>
+<!-- este es para el buscador -->
+ 
+<div id="contenido">
+  
+  
+  <div class="item" data-nombre="platano" data-precio="31.90" data-descuento="0">
+    <a href="platano.html">
+    <img src="platano.jpg" alt="platano">
+    </a>
+    <h3>Platano</h3>
+    <div >
+      <p>Precio: $31.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  
+  </div>
+ <div class="item" data-nombre="Piña Miel" data-precio="34.50" data-descuento="0">
+    <a href="Piña Miel.html">
+    <img src="piña.jpg " alt="Piña Miel">
+    </a>
+    <h3>Piña Miel</h3>
+    <div >
+      <p>Precio: $33.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  
+<div class="item" data-nombre="Papaya Maradol" data-precio="40.00" data-descuento="0">
+    <a href="Papaya Maradol.html">
+    <img src="Papaya Maradol.jpg " alt="Papaya Maradol">
+    </a>
+    <h3>Papaya Maradol</h3>
+    <div >
+      <p>Precio: $40.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="naranja" data-precio="35.90" data-descuento="0">
+    <a href="naranja.html">
+    <img src="naranja.jpg " alt="naranja">
+    </a>
+    <h3>naranja</h3>
+    <div >
+      <p>Precio: $35.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+ <div class="item" data-nombre="pera bartlett" data-precio="73.90" data-descuento="0">
+    <a href="pera bartlett.html">
+    <img src="pera bartlett.jpg " alt="pera bartlett">
+    </a>
+    <h3>pera bartlett</h3>
+    <div >
+      <p>Precio: $73.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Jicama" data-precio="29.00" data-descuento="0">
+    <a href="Jicama.html">
+    <img src="jicama.jpg" alt="Jicama">
+    </a>
+    <h3>Jicama</h3>
+    <div >
+      <p>Precio: $29.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="tunablanca" data-precio="45.90" data-descuento="0">
+    <a href="tunablanca.html">
+    <img src="tunablanca.jpg " alt="tunablanca">
+    </a>
+    <h3>Tuna Blanca</h3>
+    <div >
+      <p>Precio: $45.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  
+  <div class="item" data-nombre="uva Red Globe" data-precio="44.90" data-descuento="0">
+    <a href="Red Globe.html">
+    <img src="Red Globe.jpg " alt="uva Red Globe">
+    </a>
+    <h3>Uva Red Globe</h3>
+    <div >
+      <p>Precio: $44.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="uva Thompson" data-precio="47.00" data-descuento="0">
+    <a href="uvas Thompson.html">
+    <img src="Thompson.jpg " alt="Thompson">
+    </a>
+    <h3>Uva Thompson</h3>
+    <div >
+      <p>Precio: $47.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Uva Perlette" data-precio="46.00" data-descuento="0">
+    <a href="Perlette.html">
+    <img src="Perlette.jpg " alt="Uva Perlette">
+    </a>
+    <h3>Uva Perlette</h3>
+    <div >
+      <p>Precio: $46.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Uva Flame Seedless" data-precio="46.90" data-descuento="0">
+    <a href="Uva Flame Seedless.html">
+    <img src=" Flame Seedless.jpg " alt="Uva Flame Seedless">
+    </a>
+    <h3>Uva Flame Seedless</h3>
+    <div >
+      <p>Precio: $46.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Uva Autumn Royal" data-precio="53.90" data-descuento="0">
+    <a href="Autumn Royal.html">
+    <img src="Autumn Royal.jpg " alt="Uva Autumn Royal">
+    </a>
+    <h3>Uva Autumn Royal</h3>
+    <div >
+      <p>Precio: $53.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="pera d anjou" data-precio="60.00" data-descuento="0">
+    <a href="pera d anjou.html">
+    <img src="pera d anjou.jpg" alt="pera d anjou">
+    </a>
+    <h3>pera d anjou</h3>
+    <div >
+      <p>Precio: $60.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  
+  <div class="item" data-nombre="pera packham" data-precio="69.90" data-descuento="0">
+    <a href="pera packham.html">
+    <img src="pera packham.jpg " alt="pera packham">
+    </a>
+    <h3>pera packham</h3>
+    <div >
+      <p>Precio: $69.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Royal Gala" data-precio="44.90" data-descuento="0">
+    <a href="Manzana Royal Gala.html">
+    <img src="Manzana Royal Gala.jpg " alt="Manzana Royal Gala">
+    </a>
+    <h3>Manzana Royal Gala</h3>
+    <div >
+      <p>Precio: $44.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+   <div class="oculto"></div>
+  <div class="item" data-nombre="Manzana Red Chief" data-precio="45.90" data-descuento="10">
+    <a href="Manzana Red Chief.html">
+    <img src="Manzana Red Chief.jpg " alt="Manzana Red Chief">
+    </a>
+    <h3>Manzana Red Chief</h3>
+    <div >
+      <p>Precio: $45.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Rome Beauty" data-precio="43.90" data-descuento="0">
+    <a href="Manzana Rome Beauty.html">
+    <img src="Manzana Rome Beauty.jpg " alt="Manzana">
+    </a>
+    <h3>Manzana Rome Beauty</h3>
+    <div >
+      <p>Precio: $43.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana McIntosh" data-precio="57.00" data-descuento="0">
+    <a href="Manzana McIntosh.html">
+    <img src="Manzana McIntosh.jpg " alt="Manzana McIntosh">
+    </a>
+    <h3>Manzana McIntosh</h3>
+    <div >
+      <p>Precio: $57.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Fuji" data-precio="38.00" data-descuento="0">
+    <a href="Manzana Fuji.html">
+    <img src="Manzana Fuji.jpg " alt="Manzana Fuji">
+    </a>
+    <h3>Manzana Fuji</h3>
+    <div >
+      <p>Precio: $38.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Reineta Verde" data-precio="49.90" data-descuento="0">
+    <a href="Manzana Reineta Verde.html">
+    <img src="Manzana Reineta Verde.jpg " alt="Manzana Reineta Verde">
+    </a>
+    <h3>Manzana Reineta Verde</h3>
+    <div >
+      <p>Precio: $49.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Golden Delicious" data-precio="47.50" data-descuento="0">
+    <a href="Manzana Golden Delicious.html">
+    <img src="Manzana Golden Delicious.jpg " alt="Manzana">
+    </a>
+    <h3>Manzana Golden Delicious</h3>
+    <div >
+      <p>Precio: $47.50/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Chantecler" data-precio="60.90" data-descuento="0">
+    <a href="Manzana Chantecler.html">
+    <img src="Manzana Chantecler.jpg " alt="Manzana">
+    </a>
+    <h3>Manzana Chantecler</h3>
+    <div >
+      <p>Precio: $60.90/Kg/p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Manzana Granny Smith" data-precio="47.90" data-descuento="0">
+    <a href="Manzana Granny Smith.html">
+    <img src="Manzana Granny Smith.jpg " alt="Manzana Granny Smith">
+    </a>
+    <h3>Manzana Granny Smith</h3>
+    <div >
+      <p>Precio: $47.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Limon sin semilla" data-precio="36.00" data-descuento="0">
+    <a href="Limon sin semilla.html">
+    <img src="limon sin semilla.jpg " alt="Limon sin semilla">
+    </a>
+    <h3>Limon sin semilla</h3>
+    <div >
+      <p>Precio: $36.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Limon agrio" data-precio="33.00" data-descuento="0">
+    <a href="Limon agrio.html">
+    <img src="Limon agrio.jpg " alt="Limon agrio">
+    </a>
+    <h3>Limon agrio</h3>
+    <div >
+      <p>Precio: $33.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Limon amarillo" data-precio="46.90" data-descuento="0">
+    <a href="Limon amarillo.html">
+    <img src="Limon amarillo.jpg " alt="Limon amarillo">
+    </a>
+    <h3>Limon amarillo</h3>
+    <div >
+      <p>Precio: $46.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Lima" data-precio="40.00" data-descuento="0">
+    <a href="Lima.html">
+    <img src="Lima.jpg " alt="Lima">
+    </a>
+    <h3>Lima</h3>
+    <div >
+      <p>Precio: $40.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="fresa" data-precio="56.90" data-descuento="0">
+    <a href="fresas.html">
+    <img src="fresa.jpg" alt="fresa">
+    </a>
+    <h3>Fresa</h3>
+    <div >
+      <p>Precio: $56.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="blueberry" data-precio="107.00" data-descuento="0">
+    <a href="blueberry.html">
+    <img src="blueberry.jpg " alt="blueberryn">
+    </a>
+    <h3>Blueberry</h3>
+    <div >
+      <p>Precio: $107.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="naranja" data-precio="16.00" data-descuento="0">
+    <a href="naranja.html">
+    <img src="naranja.jpg " alt="naranja">
+    </a>
+    <h3>naranja</h3>
+    <div >
+      <p>Precio: $16.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="mandarina" data-precio="46.90" data-descuento="0">
+    <a href="mandarina.html">
+    <img src="mandarina.jpg " alt="mandarina">
+    </a>
+    <h3>Mandarina</h3>
+    <div >
+      <p>Precio: $46.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  
+  <div class="item" data-nombre="kiwi" data-precio="95.90" data-descuento="0">
+    <a href="kiwi.html">
+    <img src="kiwi.jpg" alt="kiwi">
+    </a>
+    <h3>kiwi</h3>
+    <div >
+      <p>Precio: $95.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Toronja" data-precio="37.90" data-descuento="0">
+    <a href="Toronja.html">
+    <img src="toronja.jpg" alt="Toronja">
+    </a>
+    <h3>Toronja</h3>
+    <div >
+      <p>Precio: $37.90Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+   <div class="item" data-nombre="Mango Atufalo" data-precio="40.00" data-descuento="0">
+    <a href="Mango Atufalo.html">
+    <img src="Mango Atufalo.jpg " alt="Mango Atufalo">
+    </a>
+    <h3>Mango Atulfalo</h3>
+    <div >
+      <p>Precio: $40.00/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="guayaba" data-precio="42.90" data-descuento="0">
+    <a href="guayaba.html">
+    <img src="guayaba.jpg" alt="guayaba">
+    </a>
+    <h3>Guayaba</h3>
+    <div >
+      <p>Precio: $42.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Mango Tommy" data-precio="39.90" data-descuento="0">
+    <a href="Mango Tommy.html">
+    <img src="Mango Tommy.jpg " alt="Mango Tommy">
+    </a>
+    <h3>Mango Tommy</h3>
+    <div >
+      <p>Precio: $39.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="coco" data-precio="37.90" data-descuento="0">
+    <a href="coco.html">
+    <img src="coco.jpg " alt="Manzana">
+    </a>
+    <h3>Coco</h3>
+    <div >
+      <p>Precio: $37.90/Kg</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+  <!-- copiar la parte de arriba para agregar mas productos-->
+</div>
+<div id="carrito-modal">
+    <div id="carrito-contenido">
+        <span class="cerrar-modal" onclick="cerrarCarrito()">✖</span>
+        <h2>Tu carrito</h2>
+        <div id="lista-carrito"></div>
+        <div class="carrito-total">Total: $<span id="carrito-total">0.00</span></div>
+        <button onclick="pagar()">Proceder al pago</button>
+        <button onclick="verHistorial()">Ver Historial</button>
+        <div id="historial-compras"></div>
+    </div>
+</div>
+
+<div id="pago-modal" style="display:none; position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);  background: #fff; padding: 20px; border-radius: 10px;  max-width: 400px;  width: 90%; z-index: 9999;box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <div id="pago-contenido">
+        <h3>Selecciona un método de pago</h3>
+        <button onclick="confirmarPago('Tarjeta de Crédito')">Tarjeta de Crédito</button>
+        <button onclick="confirmarPago('PayPal')">PayPal</button>
+        <button onclick="confirmarPago('Efectivo')">Efectivo</button>
+        <button onclick="cerrarPagoModal()">Cancelar</button>
+    </div>
+</div>
+
+<div id="login-modal" style="display:none; /* otros estilos */">
+    <form id="login-form">
+        <input type="text" id="username" placeholder="Nombre de usuario" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="text" id="direccion" placeholder="Dirección">
+        <input type="tel" id="telefono" placeholder="Teléfono">
+        <button type="submit">Iniciar Sesión</button>
+        <button type="button" onclick="cerrarLogin()">Cerrar</button>
+    </form>
+</div>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+
+</div>
+
+  <body>
+  <div class="features-wrapper" aria-label="Características">
+    <div class="features">
+      <!-- 1 -->
+      <div class="feature">
+        <div class="icon" aria-hidden="true">
+          <!-- badge/logo SVG -->
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="10" width="52" height="36" rx="6" stroke="#111" stroke-width="1.5" fill="none"/>
+            <path d="M12 24h40" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+            <text x="32" y="42" text-anchor="middle" font-size="8" font-family="Arial" fill="#111">GARANTÍA</text>
+          </svg>
+        </div>
+
+        <div class="text">
+          <div class="label">Garantía</div>
+          <h3 class="title">Promesa de frescura y calidad</h3>
+          <p class="desc">Productos seleccionados con control de calidad y reemplazo en caso de problemas.</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="feature">
+        <div class="icon" aria-hidden="true">
+          <!-- cashback icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2v4" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 18v4" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 7a7 7 0 1 1 14 10" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 7v6l3-2" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="text">
+          <div class="label">5% de cashback</div>
+          <h3 class="title">Con tu tarjeta de crédito</h3>
+          <p class="desc">Devuelve parte de tu compra automáticamente cuando pagas con la tarjeta asociada.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="feature">
+        <div class="icon" aria-hidden="true">
+          <!-- secure payment -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="18" height="12" rx="2" stroke="#111" stroke-width="1.6"/>
+            <path d="M7 10h6" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M17 12l1 1 3-3" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="text">
+          <div class="label">Pago seguro</div>
+          <h3 class="title">Compra sin preocupaciones</h3>
+          <p class="desc">Transacciones cifradas y protección ante fraudes para tu tranquilidad.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="feature">
+        <div class="icon" aria-hidden="true">
+          <!-- promotions box -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11l9-5 9 5v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7z" stroke="#111" stroke-width="1.6" fill="none"/>
+            <path d="M12 6v6" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M7 4l1.5 2" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M17 4l-1.5 2" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="text">
+          <div class="label">Promociones</div>
+          <h3 class="title">de Temporada</h3>
+          <p class="desc">Ofertas y descuentos especiales por tiempo limitado — siempre algo nuevo.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+<footer>
+  <div class="footer-contenedor">
+    <div class="footer-col">
+      <h2>La Cosecha Diaria</h2>
+      <p>Frutas frescas todos los días, directo del campo a tu mesa.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="tttt.html">Sobre Nosotros</a></li>
+        <li><a href="nosotros.html">politicas de privacidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Síguenos</h3>
+      <div class="redes">
+        <a href="https://www.facebook.com/share/1HvH4Gfrd4/">Facebook</a>
+        <a href="https://www.instagram.com/la_cosechadiaria?igsh=dGtzNWRjYnRqNGxo">Instagram</a>
+        <a href="">WhatsApp</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 La Cosecha Diaria. Todos los derechos reservados.
+  </div>
+</footer>
+<script>
+  let carrito = [];
+let usuarioLogueado = null;
+
+// ==================== LOGIN ====================
+function abrirLogin() {
+    document.getElementById('login-modal').style.display = 'flex';
+}
+
+function cerrarLogin() {
+    document.getElementById('login-modal').style.display = 'none';
+}
+
+document.getElementById("login-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const direccion = document.getElementById("direccion").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+
+    if(username && email){
+        usuarioLogueado = { username, email, direccion, telefono };
+        alert("✅ Sesión iniciada: " + username);
+        cerrarLogin();
+    } else {
+        alert("⚠️ Usuario y correo son obligatorios.");
+    }
+});
+
+// ==================== CARRITO ====================
+const carritoCount = document.getElementById('carrito-count');
+const carritoModal = document.getElementById('carrito-modal');
+const listaCarrito = document.getElementById('lista-carrito');
+const carritoTotal = document.getElementById('carrito-total');
+
+function agregarAlCarrito(event, btn) {
+    event.stopPropagation();
+    const item = btn.closest('.item');
+    const nombre = item.dataset.nombre;
+    const precio = parseFloat(item.dataset.precio);
+    const descuento = parseFloat(item.dataset.descuento);
+    const cantidad = parseInt(item.querySelector('.cantidad-input').value);
+
+    const existente = carrito.find(p => p.nombre === nombre);
+    if (existente) {
+        existente.cantidad += cantidad;
+    } else {
+        carrito.push({ nombre, precio, descuento, cantidad });
+    }
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    carritoCount.textContent = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+}
+
+document.getElementById('carrito-btn').addEventListener('click', () => {
+    listaCarrito.innerHTML = '';
+    let total = 0;
+    carrito.forEach((p, index) => {
+        const precioDescuento = p.precio - (p.precio * p.descuento / 100);
+        const subtotal = precioDescuento * p.cantidad;
+        total += subtotal;
+
+        const div = document.createElement('div');
+        div.classList.add('carrito-item');
+        div.innerHTML = `
+            <strong>${p.nombre}</strong><br>
+            Cantidad: ${p.cantidad} x $${precioDescuento.toFixed(2)} (${p.descuento}% desc.)<br>
+            Subtotal: $${subtotal.toFixed(2)}<br>
+            <button onclick="eliminarProducto(${index})">🗑️ Eliminar</button>
+        `;
+        listaCarrito.appendChild(div);
+    });
+    carritoTotal.textContent = total.toFixed(2);
+    carritoModal.style.display = 'flex';
+});
+
+function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+    document.getElementById('carrito-btn').click(); 
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+    cerrarCarrito();
+}
+
+function cerrarCarrito() {
+    carritoModal.style.display = 'none';
+}
+
+// ==================== PAGO Y HISTORIAL ====================
+function pagar() {
+    if(!usuarioLogueado){
+        alert("⚠️ Debes iniciar sesión antes de comprar.");
+        abrirLogin();
+        return;
+    }
+
+    if(carrito.length === 0){
+        alert("El carrito está vacío.");
+        return;
+    }
+    
+    document.getElementById('pago-modal').style.display = 'flex';
+}
+
+function cerrarPagoModal() {
+    document.getElementById('pago-modal').style.display = 'none';
+}
+
+function confirmarPago(tipoPago) {
+    // 1. Crear el objeto de la compra actual
+    const totalConDescuentos = carrito.reduce((acc, item) => {
+        const precioFinal = item.precio - (item.precio * item.descuento / 100);
+        return acc + (precioFinal * item.cantidad);
+    }, 0);
+
+    const compra = {
+        fecha: new Date().toLocaleString(),
+        usuario: usuarioLogueado,
+        productos: [...carrito], // Copiar el carrito para que no se modifique después
+        total: totalConDescuentos,
+        pago: tipoPago
+    };
+
+    // 2. Guardar en el historial de localStorage
+    let historial = JSON.parse(localStorage.getItem('historial')) || [];
+    historial.push(compra);
+    localStorage.setItem('historial', JSON.stringify(historial));
+
+    // 3. Mostrar mensaje y limpiar
+    alert(`✅ Gracias por tu compra, ${usuarioLogueado.username}.\nTipo de pago: ${tipoPago}`);
+    
+    carrito = [];
+    actualizarCarrito();
+    cerrarCarrito();
+    cerrarPagoModal();
+
+    // 4. Generar el ticket para esta nueva compra
+    generarTicket(compra);
+}
+
+function generarTicket(compra) {
+    const productosHTML = compra.productos.map(p => {
+        const precioFinal = p.precio - (p.precio * p.descuento / 100);
+        const subtotal = precioFinal * p.cantidad;
+        return `<li>${p.nombre} x ${p.cantidad} - $${subtotal.toFixed(2)}</li>`;
+    }).join('');
+
+    const numeroSesion = Math.floor(Math.random() * 1000000);
+
+    const ticketHTML = `
+        <html>
+            <head>
+                <title>Ticket de Compra</title>
+                <style>
+                    body { font-family: 'Courier New', Courier, monospace; padding: 20px; width: 300px; margin: auto; border: 1px solid #000; }
+                    h2 { text-align: center; margin-top: 0; }
+                    ul { list-style: none; padding: 0; }
+                    li { margin-bottom: 5px; display: flex; justify-content: space-between; }
+                    p { margin: 5px 0; }
+                    .total { font-weight: bold; margin-top: 15px; text-align: right; font-size: 1.1em; }
+                    .header p { margin: 2px 0; }
+                </style>
+            </head>
+            <body>
+                <h2>Ticket de Compra</h2>
+                <div class="header">
+                    <p><strong>Cliente:</strong> ${compra.usuario.username}</p>
+                    <p><strong>Correo:</strong> ${compra.usuario.email}</p>
+                    <p><strong>Fecha:</strong> ${compra.fecha}</p>
+                    <p><strong>Pago:</strong> ${compra.pago}</p>
+                    <p><strong>Sesión:</strong> #${numeroSesion}</p>
+                </div>
+                <hr>
+                <ul>
+                    ${productosHTML}
+                </ul>
+                <hr>
+                <p class="total">Total: $${compra.total.toFixed(2)}</p>
+            </body>
+        </html>
+    `;
+
+    const ventana = window.open('', 'Ticket', 'width=400,height=600');
+    ventana.document.write(ticketHTML);
+    ventana.document.close();
+}
+
+// ============== NUEVA FUNCIÓN PARA REIMPRIMIR TICKET =================
+function generarTicketDesdeHistorial(index) {
+    const historial = JSON.parse(localStorage.getItem('historial')) || [];
+    if (historial[index]) {
+        generarTicket(historial[index]);
+    } else {
+        alert("Error: No se encontró la compra en el historial.");
+    }
+}
+
+// ============== FUNCIÓN VER HISTORIAL MODIFICADA =================
+function verHistorial() {
+    const historial = JSON.parse(localStorage.getItem('historial')) || [];
+    const contenedor = document.getElementById('historial-compras');
+    contenedor.innerHTML = '<h3>Historial de compras:</h3>';
+
+    if(historial.length === 0){
+        contenedor.innerHTML += '<p>No hay compras realizadas.</p>';
+        return;
+    }
+
+    // Se muestra en orden de más reciente a más antiguo (reverse)
+    historial.slice().reverse().forEach((compra, i) => {
+        const indexOriginal = historial.length - 1 - i; // Calculamos el índice original
+        const productosLista = compra.productos.map(p => 
+            `<li>${p.nombre} x ${p.cantidad}</li>`
+        ).join('');
+        
+        const div = document.createElement('div');
+        div.classList.add('compra-historial-item'); // Agregamos una clase para estilos
+        div.innerHTML = `
+            <p><strong>Fecha:</strong> ${compra.fecha}</p>
+            <p><strong>Cliente:</strong> ${compra.usuario.username} (${compra.usuario.email})</p>
+            <p><strong>Total: $${compra.total.toFixed(2)}</strong> (Pago con: ${compra.pago})</p>
+            <p>Productos:</p>
+            <ul>${productosLista}</ul>
+            <button onclick="generarTicketDesdeHistorial(${indexOriginal})">Ver Ticket</button>
+        `;
+        contenedor.appendChild(div);
+    });
+}
+
+</script>
+
+
+<script>
+const datos = [
+ { nombre: "platano", url: "platano.html" },
+  { nombre: "Piña Miel", url: "Piña Miel.html" },
+  { nombre: "Papaya Maradol", url: "Papaya Maradol.html" },
+  { nombre: "naranja", url: "naranja.html" },
+  { nombre: "pera bartlett", url: "Pera bartlett.html" },
+
+{ nombre: "Jicama", url: "Jicama.html" },
+  { nombre: "tuna blanca", url: "tunablanca.html" },
+  { nombre: "uva Red Globe", url: " Red Globe.html" },
+  { nombre: "uva Thompson", url: "uvas Thompson.html" },
+  { nombre: "Uva Perlette", url: "Perlette.html" },
+
+{ nombre: "Uva Flame Seedless", url: "Uva Flame Seedless.html" },
+  { nombre: "Uva Flame Seedless", url: "Uva Flame Seedless.html" },
+  { nombre: "Uva Autumn Royal", url: "Autumn Royal.html" },
+  { nombre: "pera d anjou", url: "pera d anjou.html" },
+  { nombre: "pera packham", url: "pera packham.html" },
+
+{ nombre: "Manzana Royal Gala", url: "Manzana Royal Galao.html" },
+  { nombre: "Manzana Red Chief", url: "Manzana Red Chief.html" },
+  { nombre: "Manzana Rome Beauty", url: "Manzana Rome Beauty.html" },
+  { nombre: "Manzana McIntosh", url: "Manzana McIntosh.html" },
+  { nombre: "Manzana Fuji", url: "Manzana Fuji.html" },
+
+{ nombre: "Manzana Reineta Verde", url: "Manzana Reineta Verde.html" },
+  { nombre: "Manzana Golden Delicious", url: "Manzana Golden Deliciousa.html" },
+  { nombre: "Manzana Chantecler", url: "Manzana Chantecler.html" },
+  { nombre: "Manzana Granny Smith", url: "Manzana Granny Smith.html" },
+  { nombre: "Limon sin semilla", url: "Limon sin semilla.html" },
+
+{ nombre: "Limon agrio", url: "Limon agrio.html" },
+  { nombre: "Limon amarillo", url: "Limon amarillo.html" },
+  { nombre: "Lima", url: "Lima.html" },
+  { nombre: "fresa", url: "fresas.html" },
+  { nombre: "blueberry", url: "blueberry.html" },
+
+{ nombre: "naranja", url: "naranja.html" },
+  { nombre: "mandarina", url: "mandarina.html" },
+  { nombre: "Toronja", url: "Toronja.html" },
+  { nombre: "Mango Atufalo", url: "Mango Atufalo.html" },
+  { nombre: "guayabao", url: "guayaba.html" },
+  { nombre: "Mango Tommy", url: "Mango Tommy.html" },
+  { nombre: "coco", url: "coco.html" }
+
+
+];
+
+const input = document.getElementById("buscador");
+const sugerenciasDiv = document.getElementById("sugerencias");
+
+input.addEventListener("input", () => {
+  const texto = input.value.toLowerCase();
+  sugerenciasDiv.innerHTML = ""; // limpiar
+  
+  if (texto.trim() === "") return;
+
+  const filtrados = datos.filter(item => 
+    item.nombre.toLowerCase().includes(texto)
+  );
+
+  filtrados.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("sugerencia");
+    div.textContent = item.nombre;
+    div.onclick = () => {
+      window.location.href = item.url; // redirigir al link
+    };
+    sugerenciasDiv.appendChild(div);
+  });
+});
+</script>
+<script>
+</script>
+</script>
+
+<script src="https//cdn.jsdelivr.net/npm/swiper-bundle.win.js"></script>
+<script src="script.js"></script>
+<script>
+// 🔑 Lógica de login y registro
+function abrirLogin() {
+  document.getElementById("login-modal").style.display = "flex";
+}
+
+function cerrarLogin() {
+  document.getElementById("login-modal").style.display = "none";
+}
+
+document.getElementById("login-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+
+  let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+
+  if (!usuarioGuardado) {
+    // 📌 Registrar nuevo usuario
+    usuarioGuardado = { username, email, direccion, telefono };
+    localStorage.setItem("usuario", JSON.stringify(usuarioGuardado));
+    alert("Cuenta registrada exitosamente.");
+  } else {
+    // 📌 Verificar datos
+    if (usuarioGuardado.username === username && usuarioGuardado.email === email) {
+      alert(`Bienvenido de nuevo, ${usuarioGuardado.username}`);
+    } else {
+      alert("Usuario o correo incorrecto. Intenta de nuevo.");
+      return;
+    }
+  }
+
+  cerrarLogin();
+  mostrarUsuario();
+});
+
+function mostrarUsuario() {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  if (usuario) {
+    document.getElementById("login-container").innerHTML = `
+      👋 Hola, ${usuario.username} 
+      <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    `;
+  }
+}
+
+function cerrarSesion() {
+  localStorage.removeItem("usuario");
+  document.getElementById("login-container").innerHTML = `
+    <button onclick="abrirLogin()">🔑 Iniciar Sesión</button>
+  `;
+}
+mostrarUsuario(); // Mostrar usuario si ya había iniciado sesión
+</script>
+
+
+</body>
+</html>

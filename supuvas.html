@@ -1,0 +1,384 @@
+<DOCTYPE! html>
+    <html lang=es>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  
+    <title>La Cosecha Diaria</title>
+      <link real="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+      <link real="stylesheet" href="style.css">
+     <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".myswiper-1", {
+    loop: true, // se repite en bucle
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000, // cambia cada 3 segundos
+      disableOnInteraction: false,
+    },
+    effect: "slide", // puedes usar "fade", "cube", "coverflow", "flip"
+  });
+</script>
+
+</head>
+
+<body>
+  <header>
+  <div class="resolucion">
+    <div class="desktop">
+       
+    </div>
+    <div class="tablet">
+   
+    </div>
+    <div class="movil">
+        
+    </div>
+</div>
+</header>
+  
+<header>
+    
+  <a href="index.html">
+    <img src="logo.jpeg" alt="Logo" width="100">
+  </a>
+
+  <!-- Texto del logo -->
+  <div class="logo">
+    <h1>La Cosecha Diaria</h1>
+  </div>
+
+    
+    <input type="text" id="buscador" placeholder="Buscar frutas...">
+    <button id="carrito-btn">🛒 Carrito (<span id="carrito-count">0</span>)</button>
+
+</header>
+
+
+
+
+
+<header class="opti">
+    <a href="index.html">Inicio</a>
+    <a href="#">Ofertas</a>
+  <div class="dropdown">
+    <button class="dropbtn">Catalogo ▼</button>
+    <div class="dropdown-content">
+      <a href="supmanzanas.html">manzanas</a>
+      <a href="supuvas.html">uvas</a>
+      <a href="supfrutas tropicales.html">frutas tropicales</a>
+      <a href="supperas.html">peras</a>
+      <a href="suplimones.html">limones</a>
+      <a href="supcitricos.html">citricos</a>
+      <a href="supfrutas de temporada.html">frutas de temporada</a>
+      <a href="supfresas y moras.html">fresas y moras</a>
+      <a href="supduraznos.html">duraznos</a>
+    </div>
+    <a href="#">Contacto</a>
+  </header>
+
+<header class="anuncios-header">
+  <div class="anuncios-marquee">
+    <span></span>
+    <span></span>
+
+    <span>🍎 Manzanas frescas a solo $25 el kilo</span>
+    <span>platano - ¡Llévate 2 y paga 1!</span>
+    <span>🚚 Envíos GRATIS en compras mayores a $500</span>
+    <span>🌽 Productos 100% orgánicos y frescos de la granja</span>
+  </div>
+</header>
+
+
+
+
+
+
+
+<!-- Lista de productos -->
+<div id="contenido">
+  <!-- Cada producto -->
+  <div class="item" data-nombre="uva Red Globe" data-precio="30.00" data-descuento="0">
+    <a href="Red Globe.html">
+    <img src="Red Globe.jpg " alt="uva Red Globe">
+    </a>
+    <h3>Uva Red Globe</h3>
+    <div >
+      <p>Precio: $30.00</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="uva Thompson" data-precio="30.00" data-descuento="0">
+    <a href="uvas Thompson.html">
+    <img src="Thompson.jpg " alt="Thompson">
+    </a>
+    <h3>Uva Thompson</h3>
+    <div >
+      <p>Precio: $30.00</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Uva Perlette" data-precio="30.00" data-descuento="0">
+    <a href="Perlette.html">
+    <img src="Perlette.jpg " alt="Uva Perlette">
+    </a>
+    <h3>Uva Perlette</h3>
+    <div >
+      <p>Precio: $30.00</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Uva Flame Seedless" data-precio="30.00" data-descuento="0">
+    <a href="Uva Flame Seedless.html">
+    <img src=" Flame Seedless.jpg " alt="Uva Flame Seedless">
+    </a>
+    <h3>Uva Flame Seedless</h3>
+    <div >
+      <p>Precio: $30.00</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="item" data-nombre="Uva Autumn Royal" data-precio="30.00" data-descuento="0">
+    <a href="Autumn Royal.html">
+    <img src="Autumn Royal.jpg " alt="Uva Autumn Royal">
+    </a>
+    <h3>Uva Autumn Royal</h3>
+    <div >
+      <p>Precio: $30.00</p>
+     <p>Cantidad: <input type="number" min="1" value="1" class="cantidad-input"></p>
+      <button onclick="agregarAlCarrito(event, this)">Agregar al carrito</button>
+    </div>
+  </div>
+  
+  </div>
+  
+  
+  
+
+    
+<!-- copiar la parte de arriba para agregar mas productos-->
+</div>
+<!-- Modal del carrito -->
+<div id="carrito-modal">
+  <div id="carrito-contenido">
+    <span class="cerrar-modal" onclick="cerrarCarrito()">✖</span>
+    <h2>Tu carrito</h2>
+    <div id="lista-carrito"></div>
+    <div class="carrito-total">Total: $<span id="carrito-total">0.00</span></div>
+    <button onclick="pagar()">Proceder al pago</button>
+    <button onclick="verHistorial()">Ver historial de pagos</button>
+    <div id="historial-compras"></div>
+  </div>
+</div>
+
+
+</div>
+<footer>
+  <div class="footer-contenedor">
+    <div class="footer-col">
+      <h2>La Cosecha Diaria</h2>
+      <p>Frutas frescas todos los días, directo del campo a tu mesa.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Síguenos</h3>
+      <div class="redes">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+      <div>
+        <audio controls loop>
+          <source src="cansion.mp3" >
+        </audio>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 La Cosecha Diaria. Todos los derechos reservados.
+  </div>
+</footer>
+
+
+<script>
+  // Agregar al carrito
+  const carrito = [];
+  const carritoCount = document.getElementById('carrito-count');
+  const carritoModal = document.getElementById('carrito-modal');
+  const listaCarrito = document.getElementById('lista-carrito');
+  const carritoTotal = document.getElementById('carrito-total');
+
+  document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', function () {
+      document.querySelectorAll('.item').forEach(i => {
+        if (i !== this) i.classList.remove('activo');
+      });
+      this.classList.toggle('activo');
+    });
+  });
+
+  function agregarAlCarrito(event, btn) {
+    event.stopPropagation();
+    const item = btn.closest('.item');
+    const nombre = item.dataset.nombre;
+    const precio = parseFloat(item.dataset.precio);
+    const descuento = parseFloat(item.dataset.descuento);
+    const cantidad = parseInt(item.querySelector('.cantidad-input').value);
+
+    const existente = carrito.find(p => p.nombre === nombre);
+    if (existente) {
+      existente.cantidad += cantidad;
+    } else {
+      carrito.push({ nombre, precio, descuento, cantidad });
+    }
+
+    actualizarCarrito();
+  }
+
+  function actualizarCarrito() {
+    carritoCount.textContent = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+  }
+
+  // Mostrar contenido del carrito
+  document.getElementById('carrito-btn').addEventListener('click', () => {
+    listaCarrito.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach((p, index) => {
+      const precioDescuento = p.precio - (p.precio * p.descuento / 100);
+      const subtotal = precioDescuento * p.cantidad;
+      total += subtotal;
+
+      const div = document.createElement('div');
+      div.classList.add('carrito-item');
+      div.innerHTML = `
+        <strong>${p.nombre}</strong><br>
+        Cantidad: ${p.cantidad} x $${precioDescuento.toFixed(2)} (${p.descuento}% desc.)<br>
+        Subtotal: $${subtotal.toFixed(2)}<br>
+        <button onclick="eliminarProducto(${index})">🗑️ Eliminar</button>
+      `;
+      listaCarrito.appendChild(div);
+    });
+
+    carritoTotal.textContent = total.toFixed(2);
+
+    // Botón para vaciar el carrito
+    const vaciarBtn = document.createElement('button');
+    vaciarBtn.textContent = "Vaciar carrito 🧹";
+    vaciarBtn.style.marginTop = "10px";
+    vaciarBtn.onclick = vaciarCarrito;
+    listaCarrito.appendChild(vaciarBtn);
+
+    carritoModal.style.display = 'flex';
+  });
+
+  function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+    document.getElementById('carrito-btn').click(); // Refresca el modal
+  }
+
+  function vaciarCarrito() {
+    carrito.length = 0;
+    actualizarCarrito();
+    cerrarCarrito();
+  }
+
+  function cerrarCarrito() {
+    carritoModal.style.display = 'none';
+  }
+
+  function pagar() {
+    console.log("Enviando carrito al backend...", carrito);
+    alert("Gracias por tu compra. Esto debería conectarse al backend.");
+    carrito.length = 0;
+    actualizarCarrito();
+    cerrarCarrito();
+  }
+
+  document.getElementById('buscador').addEventListener('input', function () {
+    const texto = this.value.toLowerCase();
+    document.querySelectorAll('.item').forEach(item => {
+      const contenido = item.textContent.toLowerCase();
+      item.classList.toggle('oculto', !contenido.includes(texto));
+    });
+  });
+</script>
+<script>
+
+// Función de pago
+function pagar() {
+  if(carrito.length === 0){
+    alert("El carrito está vacío.");
+    return;
+  }
+
+  let historial = JSON.parse(localStorage.getItem('historial')) || [];
+  historial.push({
+    fecha: new Date().toLocaleString(),
+    productos: carrito,
+    total: carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
+  });
+
+  localStorage.setItem('historial', JSON.stringify(historial));
+  
+  alert("Gracias por tu compra. Se ha guardado en el historial.");
+  carrito = [];
+  actualizarCarrito();
+  cerrarCarrito();
+}
+
+// Función para ver historial de pagos
+function verHistorial() {
+  const historial = JSON.parse(localStorage.getItem('historial')) || [];
+  const contenedor = document.getElementById('historial-compras');
+  contenedor.innerHTML = '<h3>Historial de compras:</h3>';
+  if(historial.length === 0){
+    contenedor.innerHTML += '<p>No hay compras realizadas.</p>';
+    return;
+  }
+  historial.forEach((compra, index) => {
+    const div = document.createElement('div');
+    div.style.border = '1px solid #ccc';
+    div.style.margin = '5px';
+    div.style.padding = '5px';
+    div.innerHTML = `${compra.fecha}</strong><br>
+                     Total: $${compra.total.toFixed(2)}<br>
+                     Productos: <ul>${compra.productos.map(p => `<li>${p.nombre} x ${p.cantidad} - $${(p.precio*p.cantidad).toFixed(2)}</li>`).join('')}</ul>`;
+    contenedor.appendChild(div);
+  });
+}
+
+// Inicializar carrito al cargar la página
+actualizarCarrito();
+</script>
+
+
+<script src="https//cdn.jsdelivr.net/npm/swiper-bundle.win.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
