@@ -1243,9 +1243,6 @@ button {
 }
 
 /* Contenido Principal: Espacio para el header fijo */
-body {
-    padding-top: 170px; /* Ajusta según la altura final de tu header móvil */
-}
 
 /* Productos apilados verticalmente */
 #contenido {
