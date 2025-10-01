@@ -1188,12 +1188,7 @@ button {
       font-size:12px;
       color:var(--muted);
     }
-  
-  header:not(.header-mobile), 
-.opti, 
-.dropdown {
-    display: none !important;
-}
+
 
 /* El header móvil se muestra */
 .header-mobile {
